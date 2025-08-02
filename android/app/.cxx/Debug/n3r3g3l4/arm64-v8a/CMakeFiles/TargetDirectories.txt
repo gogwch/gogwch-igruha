@@ -1,0 +1,2 @@
+C:/Users/Gleb/Desktop/Papus/Papus 3/Programming/torrent_igruha/android/app/.cxx/Debug/n3r3g3l4/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Gleb/Desktop/Papus/Papus 3/Programming/torrent_igruha/android/app/.cxx/Debug/n3r3g3l4/arm64-v8a/CMakeFiles/rebuild_cache.dir
