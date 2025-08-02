@@ -4,15 +4,14 @@ import '../resources/image.dart';
 import 'game_list/container_button_widget.dart';
 import 'main_screen_widget.dart';
 
-const textsArray = [
-  'Новые игры',
-  'По сети',
-  'VIP 👑',
-  'Топ 10 Онлайн игр',
-  'Топ 100 игр',
-  'С русской озвуской',
-  '',
-  '',
+var buttonValues = [
+  Button(text: 'Новые игры',),
+  Button(text: 'adfghdf игры',),
+  Button(text: 'asdas игры',),
+  Button(text: 'tyuty игры',),
+  Button(text: 'tyuty игры', roundedCornersValue: 10),
+  Button(text: 'tyuty игры', roundedCornersValue: 10),
+  Button(text: 'tyuty игры', roundedCornersValue: 10),
 ];
 
 class SidebarWidget extends StatelessWidget {
@@ -27,6 +26,24 @@ class SidebarWidget extends StatelessWidget {
             color: Colors.black87,
             padding: const EdgeInsets.symmetric(horizontal: 8)),
         Expanded(
+          child: ListView.builder(
+              itemCount: buttonValues.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.only(top: 6.0),
+                  child: SizedBox(
+                    height: 40,
+                    width: 30,
+                    child: ContainerButtonWidget(
+                      text: buttonValues[index].text,
+                      roundedCornersValue: buttonValues[index].roundedCornersValue,
+                      color: buttonValues[index].color,
+                    ),
+                  ),
+                );
+              }),
+        ),
+        Expanded(
           child: Scrollbar(
             thumbVisibility: true,
             child: ScrollConfiguration(
@@ -35,46 +52,7 @@ class SidebarWidget extends StatelessWidget {
                 physics: ClampingScrollPhysics(),
                 padding:
                     const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ContainerButtonWidget(
-                        text: 'Новые игры', colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(text: '2025', colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'По сети', colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'VIP 👑', colorName: 0xFF8BC34A),
-                    SizedBox(height: 30),
-                    ContainerButtonWidget(
-                        text: 'Топ 10 Онлайн игр',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Топ 100 игр', colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'С русской озвуской',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'С русской озвуской',
-                        value: 6,
-                        colorName: 0xFF0EACDC),
-                    SizedBox(height: 16),
-                    Center(
-                      child: Text(
-                        'Советуем 🔥',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    SizedBox(height: 16),
+                child:
                     Center(
                       child: Column(
                         children: [
@@ -102,221 +80,10 @@ class SidebarWidget extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    ContainerButtonWidget(
-                        text: 'Новые игры 🔥 | Все игры',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Скоро на сайте ⏳',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Русская озвучка (Rus)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Ждем выхода (Waiting)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 20),
-                    Center(
-                      child: Text(
-                        'Категории',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    ContainerButtonWidget(
-                        text: 'Игры с онлайном',
-                        value: 6,
-                        colorName: 0xFF0EACDC),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры по сети', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Рупаки от Игрухи',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Репаки от Хатаба',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Репаки от Механиков',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2025 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2024 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2023 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2022 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2021 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2020 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2019 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры 2018 года',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Для слабых ПК', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Хороший сюжет', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Хорошая графика',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Открытый мир', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'От 1-го лица', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'От 3-го лица', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Шутеры от 1-го лица',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Шутеры от 3-го лица',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Гонки (Race)', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Зомби (Zombie)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Экшн (Action)', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Стелс (Stealth)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Роллевые (RPG)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Хоррор (Horror)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Драки (Fighting)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Аркады (Arcade)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Спортивные (Sport)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Стратегии (Strategy)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Выживание (Survival)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Симуляторы (Simulators)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Приключения (Adventure)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Песочницы (Sandbox)',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Эротические игры',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Визуальные новеллы',
-                        value: 6,
-                        colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'VR-игры', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Игры на двоих', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'GOG-игры', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 6),
-                    ContainerButtonWidget(
-                        text: 'Без установки', value: 6, colorName: 0xFF8BC34A),
-                    SizedBox(height: 3),
-                  ],
                 ),
               ),
             ),
           ),
-        ),
       ],
     );
   }
