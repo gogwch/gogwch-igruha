@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 class ModeColors {
-  static Color appBar(BuildContext context) => Color(0xFF474C57);
+  static Color appBarL(BuildContext context) => Color(0xDD000000);
+  static Color appBarD(BuildContext context) => Color(0xFF222123);
 
   static Color title(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark

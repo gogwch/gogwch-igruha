@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
       title: 'Торрент Игруха',
       theme: ThemeData(
         brightness: Brightness.light,
-        appBarTheme: AppBarTheme(backgroundColor: ModeColors.appBar(context), foregroundColor: Colors.white),
+        appBarTheme: AppBarTheme(backgroundColor: ModeColors.appBarL(context), foregroundColor: Colors.white),
         textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: Colors.white)),
 
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: Color(0xFF313743),
-        appBarTheme: AppBarTheme(backgroundColor: ModeColors.appBar(context), foregroundColor: Colors.white),
+        appBarTheme: AppBarTheme(backgroundColor: ModeColors.appBarD(context), foregroundColor: Colors.white),
         textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: Colors.white)),
       ),
       themeMode: provider.mode,

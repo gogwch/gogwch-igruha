@@ -5,13 +5,14 @@ import 'game_list/container_button_widget.dart';
 import 'main_screen_widget.dart';
 
 var buttonValues = [
-  Button(text: 'Новые игры',),
-  Button(text: 'adfghdf игры',),
-  Button(text: 'asdas игры',),
-  Button(text: 'tyuty игры',),
+  Button(text: 'Новые игры'),
+  Button(text: 'adfghdf игры'),
+  Button(text: 'asdas игры'),
+  Button(text: 'tyuty игры'),
+  Button(text: 'tyuty игры'),
   Button(text: 'tyuty игры', roundedCornersValue: 10),
   Button(text: 'tyuty игры', roundedCornersValue: 10),
-  Button(text: 'tyuty игры', roundedCornersValue: 10),
+
 ];
 
 class SidebarWidget extends StatelessWidget {
@@ -30,13 +31,13 @@ class SidebarWidget extends StatelessWidget {
               itemCount: buttonValues.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.only(top: 6.0),
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: SizedBox(
-                    height: 40,
-                    width: 30,
+                    height: 38,
                     child: ContainerButtonWidget(
                       text: buttonValues[index].text,
-                      roundedCornersValue: buttonValues[index].roundedCornersValue,
+                      roundedCornersValue:
+                          buttonValues[index].roundedCornersValue,
                       color: buttonValues[index].color,
                     ),
                   ),
@@ -51,39 +52,65 @@ class SidebarWidget extends StatelessWidget {
               child: SingleChildScrollView(
                 physics: ClampingScrollPhysics(),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
-                child:
-                    Center(
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(3.5),
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.zero),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute<void>(
-                                    builder: (context) => SteamKeyWidget(),
-                                  ),
-                                );
-                              },
-                              child: Image.asset(
-                                GameImages.sbw,
-                                width: 230,
-                                height: 350,
-                                fit: BoxFit.cover,
+                    const EdgeInsets.symmetric(vertical: 25, horizontal: 12),
+                child: Center(
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(3.5),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (context) => SteamKeyWidget(),
                               ),
-                            ),
+                            );
+                          },
+                          child: Image.asset(
+                            GameImages.sbw,
+                            width: 230,
+                            height: 350,
+                            fit: BoxFit.cover,
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
+        ),
+        Column(
+          children: [
+            Container(
+                height: 56,
+                color: Colors.black87,
+                padding: const EdgeInsets.symmetric(horizontal: 8)),
+            Expanded(
+              child: ListView.builder(
+                  physics: ClampingScrollPhysics(),
+                  itemCount: buttonValues.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: SizedBox(
+                        height: 38,
+                        child: ContainerButtonWidget(
+                          text: buttonValues[index].text,
+                          roundedCornersValue:
+                              buttonValues[index].roundedCornersValue,
+                          color: buttonValues[index].color,
+                        ),
+                      ),
+                    );
+                  }),
+            ),
+          ],
+        ),
       ],
     );
   }

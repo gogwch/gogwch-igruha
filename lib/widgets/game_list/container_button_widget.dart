@@ -43,7 +43,6 @@ class ContainerButtonWidget extends StatelessWidget {
   ) {
     return SizedBox(
       width: 10,
-      height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: color ?? Color(0xFF8BC34A),
